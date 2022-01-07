@@ -1,13 +1,24 @@
 <div class="container">
-    <div class="panel panel-default" *ngFor="let card of cardContent ">
+
+    <ul *ngFor="let card of cardContent " [ngSwitch]="card.categori">
+        <li *ngSwitchCase= 1 class="text-success">{{card.title}}</li>
+        <li *ngSwitchCase= 2 class="text-primary">{{card.title}}</li>
+        <li *ngSwitchCase= 3 class="text-danger">{{card.title}}</li>
+    </ul>
+
+    <div class="panel panel-default" *ngFor="let card of cardContent " [ngSwitch]="card.categori">
         <div class="panel-heading">
             <h4>Card Status: 
                 <span [ngStyle] ="{color: getColor()}" > {{cardStatus}}</span>
             </h4>
         </div> 
-        <div class="panel-body">{{card}}</div>
+        <div class="panel-body">
+        <div *ngIf="card == 'content 1'" style="color: red">{{card.title}}</div>
+        <div *ngIf="card !== 'content 1'">{{card.title}}</div>
+        </div>
         <div class="panel-footer">
             <button (click)="changeStatus()" class="btn btn-primary">Change Status</button>
+            <!-- <button class="btn btn-warning"(click)=""></button> -->
         </div> 
       </div>
 </div>

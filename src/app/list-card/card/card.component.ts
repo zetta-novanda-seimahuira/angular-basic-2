@@ -7,7 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
   cardStatus: string = 'offline';
-  cardContent: any[] = ['content 1', 'content 2 ', 'content 3'];
+  cardContent: any[] = [
+    {
+      "title":"content 1",
+      "categori":1,
+    },
+    {
+      "title":"content 2",
+      "categori":2,
+    },{
+      "title":"content 3",
+      "categori":3,
+    }
+  ];
 
   constructor() { }
 

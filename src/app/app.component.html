@@ -1,4 +1,9 @@
 <div class="container">
-  <h2>List of Cards</h2> <br>
-</div>
+  <h2>List of {{name}} Cards</h2> 
+  <div class="row">
+    <div class="col-xs-5">
+      <input type="text" [(ngModel)] ="name" class="form-control">
+    </div>
+  </div>
+</div><br>
 <app-list-card></app-list-card>
